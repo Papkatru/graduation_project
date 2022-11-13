@@ -11,8 +11,7 @@ import java.time.Duration;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 import static tests.web.elements.StepikElements.*;
 
 public class StepikWebPage {
@@ -27,7 +26,7 @@ public class StepikWebPage {
         passwordInput.setValue(data.password);
         submitRegistration.click();
         stepikSpinner.shouldNotBe(visible);
-        profileHeader.shouldBe(visible);
+        coursesHeader.shouldBe(visible);
         checkRegistration(data);
     }
 

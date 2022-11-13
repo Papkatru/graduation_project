@@ -14,6 +14,7 @@ public class StepikElements {
             profileButton = $(".navbar__profile-img"),
             profileList = $(".menu_right"),
             profileHeader = $(".profile-header-widget__info"),
+            coursesHeader = $(".catalog-block__title"),
             stepikSpinner = $(".stepik-loader__message"),
             searchInput = $(".search-form__input"),
             searchResult = $(".course-cards"),
