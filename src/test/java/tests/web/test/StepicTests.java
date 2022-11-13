@@ -11,6 +11,7 @@ import tests.web.page.StepikWebPage;
 import static com.codeborne.selenide.Selenide.open;
 
 @Tag("Web")
+@Tag("All")
 @Epic("Stepik")
 @Owner("Papkatru")
 public class StepicTests extends TestBase {

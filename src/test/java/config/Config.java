@@ -1,7 +1,7 @@
 package config;
 
 @org.aeonbits.owner.Config.Sources({
-        "classpath:config/web/local.properties"
+        "classpath:config/web/${env}.properties"
 })
 public interface Config extends org.aeonbits.owner.Config {
 

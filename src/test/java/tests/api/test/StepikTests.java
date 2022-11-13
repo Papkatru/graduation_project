@@ -8,7 +8,8 @@ import org.junit.jupiter.api.Test;
 import tests.api.base.ApiTestBase;
 import tests.api.page.StepikApiPage;
 
-@Tag("API")
+@Tag("Api")
+@Tag("All")
 @Epic("Stepik")
 @Owner("Papkatru")
 public class StepikTests extends ApiTestBase {
