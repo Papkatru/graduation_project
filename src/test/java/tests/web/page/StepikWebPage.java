@@ -2,17 +2,17 @@ package tests.web.page;
 
 import com.codeborne.selenide.WebDriverRunner;
 import com.codeborne.selenide.conditions.Text;
-import com.codeborne.selenide.selector.ByText;
 import io.qameta.allure.Step;
 import org.openqa.selenium.Cookie;
 import tests.api.page.StepikApiPage;
 import tests.web.data.StepikData;
 
-import java.util.List;
+import java.time.Duration;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 import static tests.web.elements.StepikElements.*;
 
 public class StepikWebPage {
@@ -27,21 +27,20 @@ public class StepikWebPage {
         passwordInput.setValue(data.password);
         submitRegistration.click();
         stepikSpinner.shouldNotHave(visible);
-        sleep(2000);
         checkRegistration(data);
     }
 
     @Step("Проверка успешной регистрации")
     public void checkRegistration(StepikData data) {
         profileButton.click();
-        profileList.find(new ByText("Профиль")).click();
+        profileList.find("[data-qa='menu-item-profile']").click();
         profileHeader.shouldHave(text(data.fullName));
     }
 
     @Step("Поиск курса")
     public void findCourse(String courseName) {
         searchInput.setValue(courseName).pressEnter();
-        searchResult.shouldHave(text(courseName));
+        searchResult.shouldHave(text(courseName), Duration.ofSeconds(10000));
     }
 
     @Step("Запись на курс")
@@ -55,7 +54,7 @@ public class StepikWebPage {
     }
 
     @Step("Логин по api")
-    public void loginByApi(){
+    public void loginByApi() {
         open("/static/frontend/organizations/vk.svg");
         String sessionIdFromResponse = stepikApiPage.login();
         Cookie sessionId = new Cookie("sessionid", sessionIdFromResponse);
