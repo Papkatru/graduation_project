@@ -32,6 +32,7 @@ public class StepikWebPage {
 
     @Step("Проверка успешной регистрации")
     public void checkRegistration(StepikData data) {
+        sleep(4000);
         profileButton.click();
         profileList.shouldBe(visible);
         profileList.find("[data-qa='menu-item-profile']").click();
