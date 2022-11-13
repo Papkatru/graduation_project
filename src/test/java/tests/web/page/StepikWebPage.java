@@ -26,7 +26,8 @@ public class StepikWebPage {
         emailInput.setValue(data.email);
         passwordInput.setValue(data.password);
         submitRegistration.click();
-        stepikSpinner.shouldNotHave(visible);
+        stepikSpinner.shouldNotBe(visible);
+        profileHeader.shouldBe(visible);
         checkRegistration(data);
     }
 
