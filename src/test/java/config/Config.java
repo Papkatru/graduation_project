@@ -1,7 +1,7 @@
-package tests.ui.config;
+package config;
 
 @org.aeonbits.owner.Config.Sources({
-        "classpath:${env}.properties"
+        "classpath:config/web/local.properties"
 })
 public interface Config extends org.aeonbits.owner.Config {
 

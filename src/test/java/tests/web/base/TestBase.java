@@ -1,4 +1,4 @@
-package tests.ui.base;
+package tests.web.base;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
@@ -7,9 +7,9 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import tests.ui.config.ConfigProvider;
+import config.ConfigProvider;
 
-import static tests.ui.helper.Attachments.*;
+import static helpers.Attachments.*;
 
 public class TestBase {
 
