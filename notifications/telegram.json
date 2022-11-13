@@ -1,0 +1,16 @@
+{
+  "base": {
+    "project": "Graduation project",
+    "environment": "stepik.org",
+    "comment": "Some description",
+    "reportLink": "",
+    "language": "en",
+    "allureFolder": "build/reports/allure-report/allureReport",
+    "enableChart": true
+  },
+  "telegram": {
+    "token": "5518380266:AAESN3W_WaxpcvlRqy6ckWYo1Iw0Xq18GuE",
+    "chat": "334662632",
+    "replyTo": ""
+  }
+}
