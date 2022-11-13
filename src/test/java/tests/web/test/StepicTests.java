@@ -13,6 +13,7 @@ import static com.codeborne.selenide.Selenide.open;
 @Tag("Web")
 @Tag("All")
 @Epic("Stepik")
+@Feature("Web tests")
 @Owner("Papkatru")
 public class StepicTests extends TestBase {
     StepikWebPage stepikPage = new StepikWebPage();

@@ -1,6 +1,7 @@
 package tests.api.test;
 
 import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -11,6 +12,7 @@ import tests.api.page.StepikApiPage;
 @Tag("Api")
 @Tag("All")
 @Epic("Stepik")
+@Feature("Api tests")
 @Owner("Papkatru")
 public class StepikTests extends ApiTestBase {
 
