@@ -1,5 +1,6 @@
 package tests.api.test;
 
+import io.qameta.allure.AllureId;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
@@ -19,18 +20,21 @@ public class StepikTests extends ApiTestBase {
     StepikApiPage stepikPage = new StepikApiPage();
 
     @Test
+    @AllureId("12922")
     @DisplayName("Получение токена")
     public void getCSRFToken() {
         stepikPage.getCSRFToken();
     }
 
     @Test
+    @AllureId("12920")
     @DisplayName("Регистрация по API")
     public void registration() {
         stepikPage.registration();
     }
 
     @Test
+    @AllureId("12921")
     @DisplayName("Логин")
     public void login() {
         stepikPage.login();

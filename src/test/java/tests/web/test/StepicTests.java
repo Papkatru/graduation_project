@@ -20,6 +20,7 @@ public class StepicTests extends TestBase {
     StepikData stepikData = new StepikData();
 
     @Test
+    @AllureId("12924")
     @DisplayName("Регистрация")
     void registrationTest() {
         open("/");
@@ -27,6 +28,7 @@ public class StepicTests extends TestBase {
     }
 
     @Test
+    @AllureId("12923")
     @DisplayName("Поиск курса")
     void findCourse() {
         open("/");
@@ -34,6 +36,7 @@ public class StepicTests extends TestBase {
     }
 
     @Test
+    @AllureId("12925")
     @DisplayName("Запись на курс")
     void joinCourse() {
         stepikPage.joinCourse("Вселенная тестирования");
