@@ -25,7 +25,7 @@ public class StepikTests extends ApiTestBase {
     }
 
     @Test
-    @DisplayName("Регистрация")
+    @DisplayName("Регистрация по API")
     public void registration() {
         stepikPage.registration();
     }
