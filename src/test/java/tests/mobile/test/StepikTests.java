@@ -1,6 +1,5 @@
 package tests.mobile.test;
 
-import io.qameta.allure.AllureId;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
@@ -21,7 +20,6 @@ public class StepikTests extends TestBase {
     StepikMobilePage mobilePage = new StepikMobilePage();
 
     @Test
-    @AllureId("")
     @DisplayName("Регистрация в мобильном приложении")
     void mobileRegistrationTest() {
         StepikData data = new StepikData();
@@ -31,7 +29,6 @@ public class StepikTests extends TestBase {
     }
 
     @Test
-    @AllureId("")
     @DisplayName("Поиск курса в мобильном приложении")
     void mobileSearchTest() {
         mobilePage.skipRegistration();
@@ -39,7 +36,6 @@ public class StepikTests extends TestBase {
     }
 
     @Test
-    @AllureId("")
     @DisplayName("Запись на курс в мобильном приложении")
     void mobileJoinCourseTest() {
         StepikData data = new StepikData();
