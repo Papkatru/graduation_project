@@ -23,6 +23,6 @@ public interface Config extends org.aeonbits.owner.Config {
     @Key("baseURI")
     String getBaseURI();
 
-    @Key("remoteUrl")
+    @Key("selenoidRemoteUrl")
     String getRemoteUrl();
 }
