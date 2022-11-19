@@ -79,6 +79,12 @@ task Api_tests(type: Test) {
     }
 }
 
+task Mobile_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags "Mobile"
+    }
+}
+
 task All_tests(type: Test) {
     useJUnitPlatform {
         includeTags "All"
