@@ -35,7 +35,7 @@ public class StepikTests extends ApiTestBase {
 
     @Test
     @AllureId("12921")
-    @DisplayName("Логин")
+    @DisplayName("Логин через API")
     public void login() {
         stepikPage.login();
     }

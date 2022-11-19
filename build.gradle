@@ -30,6 +30,8 @@ def restAssuredVersion = "5.2.0",
     allureVersion = "2.19.0",
     fakerVersion = "1.0.2",
     assertJVersion = "3.23.1",
+    appiumVersion = "8.2.0",
+    commonsVersion = "2.11.0",
     ownerVersion = "1.0.4"
 
 dependencies {
@@ -43,6 +45,8 @@ dependencies {
             "io.qameta.allure:allure-selenide:$allureVersion",
             "com.github.javafaker:javafaker:$fakerVersion",
             "org.assertj:assertj-core:$assertJVersion",
+            "io.appium:java-client:$appiumVersion",
+            "commons-io:commons-io:$commonsVersion",
             "org.aeonbits.owner:owner:$ownerVersion"
     )
 }
@@ -63,8 +67,8 @@ tasks.withType(Test) {
     }
 }
 
-task Web_tests(type: Test){
-    useJUnitPlatform{
+task Web_tests(type: Test) {
+    useJUnitPlatform {
         includeTags "Web"
     }
 }

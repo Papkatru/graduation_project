@@ -30,7 +30,7 @@ public class StepicTests extends TestBase {
     @Test
     @AllureId("12923")
     @DisplayName("Поиск курса")
-    void findCourse() {
+    void findCourseTest() {
         open("/");
         stepikPage.findCourse("Вселенная тестирования");
     }
@@ -38,7 +38,7 @@ public class StepicTests extends TestBase {
     @Test
     @AllureId("12925")
     @DisplayName("Запись на курс")
-    void joinCourse() {
+    void joinCourseTest() {
         stepikPage.joinCourse("Вселенная тестирования");
     }
 }
