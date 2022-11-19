@@ -16,7 +16,7 @@ public class StepikElements {
             profileHeader = $(".profile-header-widget__info"),
             coursesHeader = $(".catalog-block__title"),
             stepikSpinner = $(".stepik-loader__message"),
-            searchInput = $(".search-form__input"),
+            searchInput = $(".navbar__search-input"),
             searchResult = $(".course-cards"),
             joinCourseButton = $(".course-promo-enrollment__join-btn"),
             courseHeader = $(".lesson-sidebar__header"),

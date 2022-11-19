@@ -42,7 +42,7 @@ public class StepikWebPage {
     @Step("Поиск курса")
     public void findCourse(String courseName) {
         searchInput.setValue(courseName).pressEnter();
-        searchResult.shouldHave(text(courseName), Duration.ofSeconds(10000));
+        searchResult.shouldHave(text(courseName), Duration.ofSeconds(8));
     }
 
     @Step("Запись на курс")
