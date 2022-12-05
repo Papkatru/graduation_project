@@ -1,4 +1,4 @@
-package tests.mobile.base;
+package tests.mobile.test;
 
 import com.codeborne.selenide.Configuration;
 import tests.mobile.drivers.BrowserstackMobileDriver;

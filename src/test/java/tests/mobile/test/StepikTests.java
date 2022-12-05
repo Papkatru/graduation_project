@@ -6,7 +6,6 @@ import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import tests.mobile.base.TestBase;
 import tests.mobile.page.StepikMobilePage;
 import tests.web.data.StepikData;
 

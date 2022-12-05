@@ -1,4 +1,4 @@
-package tests.api.base;
+package tests.api.test;
 
 import io.qameta.allure.Step;
 import io.restassured.RestAssured;

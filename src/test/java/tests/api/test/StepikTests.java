@@ -7,7 +7,6 @@ import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import tests.api.base.ApiTestBase;
 import tests.api.page.StepikApiPage;
 
 @Tag("Api")
