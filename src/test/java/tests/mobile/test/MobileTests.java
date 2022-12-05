@@ -6,7 +6,6 @@ import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import tests.mobile.page.StepikMobilePage;
 import tests.web.data.StepikData;
 
 @Tag("Mobile")
@@ -14,32 +13,30 @@ import tests.web.data.StepikData;
 @Epic("Stepik")
 @Feature("Mobile tests")
 @Owner("Papkatru")
-public class StepikTests extends TestBase {
-
-    StepikMobilePage mobilePage = new StepikMobilePage();
+public class MobileTests extends TestBase {
 
     @Test
     @DisplayName("Регистрация в мобильном приложении")
     void mobileRegistrationTest() {
         StepikData data = new StepikData();
-        mobilePage.goToRegistration();
-        mobilePage.fillRegistrationForm(data);
-        mobilePage.checkRegistration(data);
+        registrationPage.goToRegistration();
+        registrationPage.fillRegistrationForm(data.firstName, data.email, data.password);
+        registrationPage.checkRegistration(data.firstName);
     }
 
     @Test
     @DisplayName("Поиск курса в мобильном приложении")
     void mobileSearchTest() {
-        mobilePage.skipRegistration();
-        mobilePage.findCourse("Вселенная тестирования");
+        catalogPage.skipRegistration();
+        catalogPage.findCourse("Вселенная тестирования");
     }
 
     @Test
     @DisplayName("Запись на курс в мобильном приложении")
     void mobileJoinCourseTest() {
         StepikData data = new StepikData();
-        mobilePage.goToRegistration();
-        mobilePage.fillRegistrationForm(data);
-        mobilePage.joinCourse("Вселенная тестирования", "1.1 Давай знакомиться!");
+        registrationPage.goToRegistration();
+        registrationPage.fillRegistrationForm(data.firstName, data.email, data.password);
+        coursesPage.joinCourse("Вселенная тестирования", "1.1 Давай знакомиться!");
     }
 }
