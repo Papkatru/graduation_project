@@ -5,7 +5,7 @@ import com.codeborne.selenide.WebDriverRunner;
 import com.codeborne.selenide.conditions.Text;
 import io.qameta.allure.Step;
 import org.openqa.selenium.Cookie;
-import tests.api.page.StepikApiPage;
+import tests.api.page.LoginApi;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
@@ -14,7 +14,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class CoursesPage {
 
-    StepikApiPage stepikApiPage = new StepikApiPage();
+    LoginApi loginApi = new LoginApi();
 
     public static SelenideElement
             searchResult = $(".course-cards"),
@@ -31,7 +31,7 @@ public class CoursesPage {
     @Step("Логин по api")
     public void loginByApi() {
         open("/static/frontend/organizations/vk.svg");
-        String sessionIdFromResponse = stepikApiPage.login();
+        String sessionIdFromResponse = loginApi.login();
         Cookie sessionId = new Cookie("sessionid", sessionIdFromResponse);
         WebDriverRunner.getWebDriver().manage().addCookie(sessionId);
         open("/");

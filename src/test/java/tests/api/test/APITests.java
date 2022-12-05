@@ -7,35 +7,32 @@ import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import tests.api.page.StepikApiPage;
 
 @Tag("Api")
 @Tag("All")
 @Epic("Stepik")
 @Feature("Api tests")
 @Owner("Papkatru")
-public class StepikTests extends ApiTestBase {
-
-    StepikApiPage stepikPage = new StepikApiPage();
+public class APITests extends ApiTestBase {
 
     @Test
     @AllureId("12922")
     @DisplayName("Получение токена")
-    public void getCSRFToken() {
-        stepikPage.getCSRFToken();
+    public void getCookiesWithCSRFToken() {
+        loginApi.getCookiesWithCSRFToken();
     }
 
     @Test
     @AllureId("12920")
     @DisplayName("Регистрация по API")
     public void registration() {
-        stepikPage.registration();
+        loginApi.registration();
     }
 
     @Test
     @AllureId("12921")
     @DisplayName("Логин через API")
     public void login() {
-        stepikPage.login();
+        loginApi.login();
     }
 }

@@ -11,12 +11,13 @@ import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static tests.api.specs.Specs.*;
 
-public class StepikApiPage {
+public class LoginApi {
 
     @Step("Получение csrf токена")
-    public Map<String, String> getCSRFToken() {
+    public Map<String, String> getCookiesWithCSRFToken() {
         Map<String, String> csrfToken =
                 given()
                         .with().spec(request)
@@ -25,6 +26,7 @@ public class StepikApiPage {
                         .then()
                         .spec(response)
                         .extract().cookies();
+        assertFalse(csrfToken.get("csrftoken").isEmpty());
         return csrfToken;
     }
 
@@ -38,7 +40,7 @@ public class StepikApiPage {
         String fullName = profile.getFirstName() + " " + profile.getLastName();
         User user = new User();
         user.setUser(profile);
-        Map<String, String> cookies = getCSRFToken();
+        Map<String, String> cookies = getCookiesWithCSRFToken();
         Users response = given()
                 .with().spec(request)
                 .header("Referer", "https://stepik.org/catalog/search?auth=registration")
@@ -58,10 +60,9 @@ public class StepikApiPage {
     @Step("Логин")
     public String login() {
         Profile profile = registration();
-        Login login = new Login();
-        login.setEmail(profile.getEmail());
-        login.setPassword(profile.getPassword());
-        Map<String, String> cookies = getCSRFToken();
+        Login login = Login.builder().email(profile.getEmail())
+                .password(profile.getPassword()).build();
+        Map<String, String> cookies = getCookiesWithCSRFToken();
         String sessionId =
                 given()
                         .with().spec(request)
